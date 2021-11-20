@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { fetchFortune } from './helper/fetch';
 import { fortuneDataInit } from './helper/data'
-import { lineData, graphBgColor } from './data/data';
+import { lineData, graphSettings } from './data/data';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine, CartesianGrid } from 'recharts';
 
 import CustomToolTip from './components/CustomTooltip';
@@ -14,7 +14,7 @@ function App() {
     month: date.getMonth() + 1,
   });
   const [data, setData] = useState([]);
-  const formattedToday = `${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
+  const formattedToday = `${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
 
   const displayLineSettings = [
     { key: 'total', isDisplay: true },
@@ -41,17 +41,22 @@ function App() {
     <div className="bg-pink-200 h-screen">
         <ResponsiveContainer width="100%">
           <LineChart data={data}>
-            <CartesianGrid horizontalFill={graphBgColor} vertical={false} fillOpacity={0.4} />
+            <CartesianGrid horizontalFill={graphSettings.bgColor} vertical={false} fillOpacity={0.4} />
             {lineSettings.map((item: any) => {
               if (item.isDisplay) {
-                return <Line key={item.key} dataKey={item.key} stroke={lineData[item.key].color} isAnimationActive={false} dot={{ stroke: '#fff', width: 6, strokeWidth: 2, fill: lineData[item.key].color }} />
+                return <Line
+                          key={item.key}
+                          dataKey={item.key}
+                          stroke={lineData[item.key].color}
+                          isAnimationActive={false}
+                          dot={{ fill: lineData[item.key].color, ...graphSettings.dots }} />
               } else {
                 return null;
               }
             })}
-            <XAxis dataKey="date" stroke="#fff" />
-            <YAxis stroke="#fff" domain={[1, 5]} />
-            <ReferenceLine x={formattedToday} stroke="white" label="Today" />
+            <XAxis dataKey="date" stroke={graphSettings.xStroke} />
+            <YAxis stroke={graphSettings.yStroke} domain={[1, 5]} />
+            <ReferenceLine x={formattedToday} stroke={graphSettings.referenceLine} label="今日" />
             <Tooltip
               formatter={(value: number, name: string) => {
                 return [value, lineData[name].jpName];

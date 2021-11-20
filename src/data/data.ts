@@ -68,6 +68,16 @@ export const lineData: LineDataType = {
   },
 }
 
-export const graphBgColor = [
-  '#FCC6E5', '#F8B1D9', '#FCA0D3', '#FA8FCB', "#F879C1"
-]
+export const graphSettings = {
+  bgColor: [
+    '#FCC6E5', '#F8B1D9', '#FCA0D3', '#FA8FCB', "#F879C1"
+  ],
+  yStroke: '#fff',
+  xStroke: '#fff',
+  referenceLine: '#fff',
+  dots: {
+    stroke: '#fff',
+    width: 6,
+    strokeWidth: 2,
+  }
+}
