@@ -67,3 +67,7 @@ export const lineData: LineDataType = {
     color: '#D2FF17'
   },
 }
+
+export const graphBgColor = [
+  '#FCC6E5', '#F8B1D9', '#FCA0D3', '#FA8FCB', "#F879C1"
+]

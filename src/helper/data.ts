@@ -5,6 +5,7 @@ export const fortuneDataInit = (fetchedData: any, now: nowType, sign: string) =>
     const {year, month} = now;
     for (let i = 0; i < Object.keys(fetchedData.horoscope).length; i++) {
         const formattedDay = `${year}/${('0' + month).slice(-2)}/${('0' + (i + 1)).slice(-2)}`;
+        const formattedDayForKey = `${('0' + month).slice(-2)}/${('0' + (i + 1)).slice(-2)}`;
         const {
             content,
             item,
@@ -14,7 +15,7 @@ export const fortuneDataInit = (fetchedData: any, now: nowType, sign: string) =>
             money,
         } = fetchedData.horoscope[formattedDay][signData[sign].index];
         array.push({
-            date: formattedDay,
+            date: formattedDayForKey,
             content,
             item,
             total,

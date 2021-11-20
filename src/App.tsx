@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { fetchFortune } from './helper/fetch';
 import { fortuneDataInit } from './helper/data'
-import { lineData } from './data/data';
+import { lineData, graphBgColor } from './data/data';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine, CartesianGrid } from 'recharts';
 
 import CustomToolTip from './components/CustomTooltip';
@@ -41,10 +41,10 @@ function App() {
     <div className="bg-pink-200 h-screen">
         <ResponsiveContainer width="100%">
           <LineChart data={data}>
-            <CartesianGrid horizontalFill={['#7a98cf', '#386dcf', '#0040b7', '#002e85', "#011f57"]} vertical={false} fillOpacity={0.4} />
+            <CartesianGrid horizontalFill={graphBgColor} vertical={false} fillOpacity={0.4} />
             {lineSettings.map((item: any) => {
               if (item.isDisplay) {
-                return <Line key={item.key} dataKey={item.key} stroke={lineData[item.key].color} strokeWidth={3} strokeDasharray="5 2" isAnimationActive={false} dot={{ stroke: '#fff', width: 6, strokeWidth: 2, fill: lineData[item.key].color }} />
+                return <Line key={item.key} dataKey={item.key} stroke={lineData[item.key].color} isAnimationActive={false} dot={{ stroke: '#fff', width: 6, strokeWidth: 2, fill: lineData[item.key].color }} />
               } else {
                 return null;
               }
