@@ -4,6 +4,7 @@ import { fetchFortune } from '../helper/fetch';
 import { fortuneDataInit } from '../helper/data'
 
 import FortuneGraph from './FortuneGraph';
+import FortuneControl from './FortuneControl';
 
 const FortunePage = () => {
   const date = new Date();
@@ -36,7 +37,10 @@ const FortunePage = () => {
   }, [now])
 
   return (
-      <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
+      <>
+        <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
+        <FortuneControl now={now} setNow={setNow} date={date} />
+      </>
   )
 }
 
