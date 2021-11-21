@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { signData } from '../data/data';
+import classNames from 'classnames'
 
 import _forEach from 'lodash/forEach';
 
@@ -10,8 +11,8 @@ interface FortuneSetSignType {
 
 const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
   const signList: ReactNode[] = [];
-  _forEach(signData, (sign, key) => {
-    signList.push(<li className="mr-4 mb-2"><button aria-label="星座を選択" onClick={() => handleSetsign(key)}>{sign.jpName}</button></li>)
+  _forEach(signData, (signData, key) => {
+    signList.push(<li className={classNames('mr-4', 'mb-2', { 'text-red-700': key === sign })}><button aria-label="星座を選択" onClick={() => handleSetsign(key)}>{signData.jpName}</button></li>)
   })
 
   const handleSetsign = (sign: string) => {
