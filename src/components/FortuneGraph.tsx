@@ -13,32 +13,32 @@ interface FortuneGraphProps {
 
 const FortuneGraph: React.FC<FortuneGraphProps> = ({ data, lineSettings, formattedToday }) => {
   return (
-    <ResponsiveContainer width="100%">
-    <LineChart data={data}>
-      <CartesianGrid horizontalFill={graphSettings.bgColor} vertical={false} fillOpacity={0.4} />
-      {lineSettings.map((item: any) => {
-        if (item.isDisplay) {
-          return <Line
-                    key={item.key}
-                    dataKey={item.key}
-                    stroke={lineData[item.key].color}
-                    isAnimationActive={false}
-                    dot={{ fill: lineData[item.key].color, ...graphSettings.dots }} />
-        } else {
-          return null;
-        }
-      })}
-      <XAxis dataKey="date" stroke={graphSettings.xStroke} />
-      <YAxis stroke={graphSettings.yStroke} domain={[1, 5]} />
-      <ReferenceLine x={formattedToday} stroke={graphSettings.referenceLine} label="今日" />
-      <Tooltip
-        formatter={(value: number, name: string) => {
-          return [value, lineData[name].jpName];
-        }}
-        content={<CustomToolTip formattedData={data}/>}
-      />
-    </LineChart>
-  </ResponsiveContainer>
+    <ResponsiveContainer width="100%" height={500}>
+      <LineChart data={data}>
+        <CartesianGrid horizontalFill={graphSettings.bgColor} vertical={false} fillOpacity={0.4} />
+        {lineSettings.map((item: any) => {
+          if (item.isDisplay) {
+            return <Line
+                      key={item.key}
+                      dataKey={item.key}
+                      stroke={lineData[item.key].color}
+                      isAnimationActive={false}
+                      dot={{ fill: lineData[item.key].color, ...graphSettings.dots }} />
+          } else {
+            return null;
+          }
+        })}
+        <XAxis dataKey="date" tick={{ fill: graphSettings.textColor }} stroke={graphSettings.xStroke} />
+        <YAxis tick={{ fill: graphSettings.textColor }} stroke={graphSettings.yStroke} domain={[1, 5]} />
+        <ReferenceLine x={formattedToday} stroke={graphSettings.referenceLine} strokeWidth={graphSettings.referenceLineWidth} label="今日" />
+        <Tooltip
+          formatter={(value: number, name: string) => {
+            return [value, lineData[name].jpName];
+          }}
+          content={<CustomToolTip formattedData={data}/>}
+        />
+      </LineChart>
+    </ResponsiveContainer>
   )
 }
 

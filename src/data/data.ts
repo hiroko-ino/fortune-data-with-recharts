@@ -72,12 +72,14 @@ export const graphSettings = {
   bgColor: [
     '#FCC6E5', '#F8B1D9', '#FCA0D3', '#FA8FCB', "#F879C1"
   ],
-  yStroke: '#fff',
-  xStroke: '#fff',
-  referenceLine: '#fff',
+  yStroke: '#2d3748',
+  xStroke: '#2d3748',
+  referenceLine: '#bbb',
+  referenceLineWidth: 2,
   dots: {
     stroke: '#fff',
     width: 6,
     strokeWidth: 2,
-  }
+  },
+  textColor: '#2d3748',
 }

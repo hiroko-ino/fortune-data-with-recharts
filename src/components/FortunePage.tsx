@@ -38,7 +38,9 @@ const FortunePage = () => {
 
   return (
       <>
-        <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
+        <div className="pr-16">
+          <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
+        </div>
         <FortuneControl now={now} setNow={setNow} date={date} />
       </>
   )

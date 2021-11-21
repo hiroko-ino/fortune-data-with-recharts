@@ -3,7 +3,7 @@ import FortunePage from './components/FortunePage';
 
 const App = () => {
   return (
-    <div className="bg-pink-200 h-screen">
+    <div>
       <FortunePage />
     </div>
   );
