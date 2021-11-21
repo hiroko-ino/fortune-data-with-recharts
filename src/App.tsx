@@ -1,10 +1,10 @@
 import React from 'react';
-import FortuneGraph from './components/FortuneGraph';
+import FortunePage from './components/FortunePage';
 
 const App = () => {
   return (
     <div className="bg-pink-200 h-screen">
-      <FortuneGraph />
+      <FortunePage />
     </div>
   );
 }
