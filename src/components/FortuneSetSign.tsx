@@ -10,9 +10,13 @@ interface FortuneSetSignType {
 
 const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
   const signList: ReactNode[] = [];
-  _forEach(signData, (sign) => {
-    signList.push(<li className="mr-4 mb-2">{sign.jpName}</li>)
+  _forEach(signData, (sign, key) => {
+    signList.push(<li className="mr-4 mb-2"><button aria-label="星座を選択" onClick={() => handleSetsign(key)}>{sign.jpName}</button></li>)
   })
+
+  const handleSetsign = (sign: string) => {
+    setSign(sign)
+  }
 
   return (
     <ul className="flex flex-wrap">

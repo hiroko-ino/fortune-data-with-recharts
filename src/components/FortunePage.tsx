@@ -15,7 +15,7 @@ const FortunePage = () => {
   });
   const [data, setData] = useState<dataType>([]);
   const formattedToday = `${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
-  const [sign, setSign] = useState('all');
+  const [sign, setSign] = useState('aries');
 
   const displayLineSettings = [
     { key: 'total', isDisplay: true },
@@ -31,12 +31,12 @@ const FortunePage = () => {
     (async() => {
       if (!unmounted) {
         const fetchResult = await fetchFortune(`/${now.year}/${('0' + now.month).slice(-2)}`);
-        const result = fortuneDataInit(fetchResult, now, 'leo');
+        const result = fortuneDataInit(fetchResult, now, sign);
         setData(result);
       }
     })();
     return () => { unmounted = true; };
-  }, [now])
+  }, [now, sign])
 
   return (
       <>
