@@ -7,7 +7,7 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceL
 
 import CustomToolTip from './components/CustomTooltip';
 
-function App() {
+const App = () => {
   const date = new Date();
   const [now, setNow] = useState<nowType>({
     year: date.getFullYear(),

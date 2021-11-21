@@ -2,7 +2,7 @@ import React from 'react';
 
 import { lineData } from '../data/data'
 
-function CustomToolTip({ active, payload, label, formattedData }: any) {
+const CustomToolTip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div>
