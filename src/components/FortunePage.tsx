@@ -5,6 +5,7 @@ import { fortuneDataInit } from '../helper/data'
 
 import FortuneGraph from './FortuneGraph';
 import FortuneControl from './FortuneControl';
+import FortuneSetSign from './FortuneSetSign';
 
 const FortunePage = () => {
   const date = new Date();
@@ -14,6 +15,7 @@ const FortunePage = () => {
   });
   const [data, setData] = useState<dataType>([]);
   const formattedToday = `${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
+  const [sign, setSign] = useState('all');
 
   const displayLineSettings = [
     { key: 'total', isDisplay: true },
@@ -38,10 +40,15 @@ const FortunePage = () => {
 
   return (
       <>
+        <div className="px-16">
+          <FortuneSetSign sign={sign} setSign={setSign} />
+        </div>
         <div className="pr-16">
           <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
         </div>
-        <FortuneControl now={now} setNow={setNow} date={date} />
+        <div className="px-16">
+          <FortuneControl now={now} setNow={setNow} date={date} />
+        </div>
       </>
   )
 }

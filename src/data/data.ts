@@ -46,7 +46,7 @@ export const signData: signDataType = {
   pisces: {
     index: 11,
     jpName: '魚座',
-  }
+  },
 }
 
 export const lineData: LineDataType = {
