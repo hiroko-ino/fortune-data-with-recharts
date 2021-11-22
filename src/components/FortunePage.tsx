@@ -6,6 +6,7 @@ import { fortuneDataInit } from '../helper/data'
 import FortuneGraph from './FortuneGraph';
 import FortuneControl from './FortuneControl';
 import FortuneSetSign from './FortuneSetSign';
+import FortuneSetLine from './FortuneSetLine';
 
 const FortunePage = () => {
   const date = new Date();
@@ -42,6 +43,9 @@ const FortunePage = () => {
       <>
         <div className="px-16">
           <FortuneSetSign sign={sign} setSign={setSign} />
+        </div>
+        <div className="px-16">
+          <FortuneSetLine lineSettings={lineSettings} setLineSettings={setLineSettings} />
         </div>
         <div className="pr-16">
           <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
