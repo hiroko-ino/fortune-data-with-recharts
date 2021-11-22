@@ -1,5 +1,5 @@
 {
-  "name": "fortune-rhythm-from-api",
+  "name": "fortune-api-with-recharts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
