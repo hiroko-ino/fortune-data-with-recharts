@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-pink-200;
+    @apply bg-pink-100;
     @apply text-gray-800;
   }
 }

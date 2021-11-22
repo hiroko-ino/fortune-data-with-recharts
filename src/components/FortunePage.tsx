@@ -41,16 +41,16 @@ const FortunePage = () => {
 
   return (
       <>
-        <div className="px-16">
+        <div className="px-4 md:px-16">
           <FortuneSetSign sign={sign} setSign={setSign} />
         </div>
-        <div className="px-16">
+        <div className="px-4 md:px-16">
           <FortuneSetLine lineSettings={lineSettings} setLineSettings={setLineSettings} />
         </div>
-        <div className="pr-16">
+        <div className="pt-4 pr-4 mg:pr-16">
           <FortuneGraph data={data} lineSettings={lineSettings} formattedToday={formattedToday} />
         </div>
-        <div className="px-16">
+        <div className="px-4 md:px-16">
           <FortuneControl now={now} setNow={setNow} date={date} />
         </div>
       </>

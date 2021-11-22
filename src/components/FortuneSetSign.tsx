@@ -12,7 +12,7 @@ interface FortuneSetSignType {
 const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
   const signList: ReactNode[] = [];
   _forEach(signData, (signData, key) => {
-    signList.push(<li className={classNames('mr-4', 'mb-2', { 'text-red-700': key === sign })}><button aria-label="星座を選択" onClick={() => handleSetsign(key)}>{signData.jpName}</button></li>)
+    signList.push(<li className={classNames('ml-4', 'mb-2', { 'text-red-700': key === sign })}><button aria-label="星座を選択" onClick={() => handleSetsign(key)}>{signData.jpName}</button></li>)
   })
 
   const handleSetsign = (sign: string) => {
@@ -20,9 +20,11 @@ const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
   }
 
   return (
-    <ul className="flex flex-wrap">
-      {signList}
-    </ul>
+    <div>
+      <ul className="-ml-4 flex flex-wrap">
+        {signList}
+      </ul>
+    </div>
   )
 }
 
