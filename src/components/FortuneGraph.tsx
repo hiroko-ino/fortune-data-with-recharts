@@ -40,7 +40,7 @@ const FortuneGraph: React.FC<FortuneGraphProps> = ({ data, lineSettings, formatt
             formatter={(value: number, name: string) => {
               return [value, lineData[name].jpName];
             }}
-            content={<CustomToolTip formattedData={data}/>}
+            content={<CustomToolTip data={data}/>}
           />
         </LineChart>
       </ResponsiveContainer>

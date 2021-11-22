@@ -20,7 +20,8 @@ const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
   }
 
   return (
-    <div>
+    <div className="flex">
+      <p className="mr-4 flex-shrink-0">●星座の選択：</p>
       <ul className="-ml-4 flex flex-wrap">
         {signList}
       </ul>

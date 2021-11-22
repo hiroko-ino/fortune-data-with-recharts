@@ -18,12 +18,15 @@ const FortuneSetLine: React.FC<FortuneSetLineType> = ({ lineSettings, setLineSet
   }
 
   return (
-    <ul className="flex flex-wrap">
-      {lineSettings.map((line, index) => {
-        const color = line.isDisplay === true ? { color: lineData[line.key].color } : { color: 'inherit' };
-        return <li className="mr-4 mb-2" style={color}><button aria-label="ラインを選択" onClick={() => handleSetLine(line.key, index)}>{lineData[line.key].jpName}</button></li>
-      })}
-    </ul>
+    <div className="flex">
+      <p className="mr-4 flex-shrink-0">●線の表示・非表示：</p>
+      <ul className="flex flex-wrap -ml-4">
+        {lineSettings.map((line, index) => {
+          const color = line.isDisplay === true ? { color: lineData[line.key].color } : { color: 'inherit' };
+          return <li className="ml-4 mb-2" style={color}><button aria-label="ラインを選択" onClick={() => handleSetLine(line.key, index)}>{lineData[line.key].jpName}</button></li>
+        })}
+      </ul>
+    </div>
   )
 }
 

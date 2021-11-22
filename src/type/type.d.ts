@@ -24,8 +24,8 @@ type LineDataType = {
 
 type dataType = {
   date: string,
-  content: number,
-  item: number,
+  content: string,
+  item: string,
   total: number,
   love: number,
   job: number,
