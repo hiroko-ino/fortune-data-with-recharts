@@ -1,5 +1,5 @@
 {
-  "name": "fortune-api-with-recharts",
+  "name": "fortune-data-with-recharts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
