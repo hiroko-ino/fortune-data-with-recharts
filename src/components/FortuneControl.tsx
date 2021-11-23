@@ -23,8 +23,8 @@ const FortuneControl: React.FC<FortuneControlType> = ({now, setNow, date}) => {
 
   return (
     <div className="flex justify-between">
-      <button onClick={handlePrev}>前月</button>
-      {!(now.year === date.getFullYear() && now.month === date.getMonth() + 1) && <button onClick={handleNext}>次月 &gt;</button>}
+      <button className="p-1 bg-gray-800 text-white rounded" onClick={handlePrev}>前月</button>
+      {!(now.year === date.getFullYear() && now.month === date.getMonth() + 1) && <button className="p-1 bg-gray-800 text-white rounded" onClick={handleNext}>次月 &gt;</button>}
     </div>
   )
 }

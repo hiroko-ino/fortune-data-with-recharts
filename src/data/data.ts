@@ -52,7 +52,7 @@ export const signData: signDataType = {
 export const lineData: LineDataType = {
   total: {
     jpName: '総合運',
-    color: '#13F472'
+    color: '#1db35c'
   },
   love: {
     jpName: '恋愛運',
@@ -64,7 +64,7 @@ export const lineData: LineDataType = {
   },
   money: {
     jpName: '金運',
-    color: '#D2FF17'
+    color: '#d9c911'
   },
 }
 
