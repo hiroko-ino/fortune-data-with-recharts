@@ -23,7 +23,7 @@ const FortuneSetLine: React.FC<FortuneSetLineType> = ({ lineSettings, setLineSet
       <ul className="flex flex-wrap -ml-4">
         {lineSettings.map((line, index) => {
           const color = line.isDisplay === true ? { color: 'white', backgroundColor: lineData[line.key].color } : { color: 'inherit' };
-          return <li className="ml-4 mb-2"><button className="rounded p-1" style={color} aria-label="ラインを選択" onClick={() => handleSetLine(line.key, index)}>{lineData[line.key].jpName}</button></li>
+          return <li key={lineData[line.key].jpName} className="ml-4 mb-2"><button className="rounded p-1" style={color} aria-label="ラインを選択" onClick={() => handleSetLine(line.key, index)}>{lineData[line.key].jpName}</button></li>
         })}
       </ul>
     </div>
