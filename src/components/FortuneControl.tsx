@@ -6,7 +6,7 @@ interface FortuneControlType {
   setNow: React.Dispatch<React.SetStateAction<nowType>>
 }
 
-const FortuneControl: React.FC<FortuneControlType> = ({now, setNow, date}) => {
+const FortuneControl: React.FC<FortuneControlType> = React.memo(({now, setNow, date}) => {
   const handlePrev = () => {
     setNow((prevState) => ({
       year: now.month === 1 ? prevState.year - 1 : prevState.year,
@@ -37,6 +37,6 @@ const FortuneControl: React.FC<FortuneControlType> = ({now, setNow, date}) => {
       )}
     </div>
   )
-}
+})
 
 export default FortuneControl;

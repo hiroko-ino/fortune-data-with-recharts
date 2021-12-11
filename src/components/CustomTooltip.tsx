@@ -2,7 +2,7 @@ import React from 'react';
 
 import { lineData } from '../data/data'
 
-const CustomToolTip = ({ active, payload, label }: any) => {
+const CustomToolTip = React.memo(({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-white p-4 rounded-lg max-w-xs">
@@ -21,6 +21,6 @@ const CustomToolTip = ({ active, payload, label }: any) => {
   } else {
     return <div />
   }
-}
+})
 
 export default CustomToolTip;

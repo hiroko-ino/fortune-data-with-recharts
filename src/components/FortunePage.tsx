@@ -8,7 +8,7 @@ import FortuneControl from './FortuneControl';
 import FortuneSetSign from './FortuneSetSign';
 import FortuneSetLine from './FortuneSetLine';
 
-const FortunePage = () => {
+const FortunePage = React.memo(() => {
   const date = new Date();
   const [now, setNow] = useState<nowType>({
     year: date.getFullYear(),
@@ -55,6 +55,6 @@ const FortunePage = () => {
         </div>
       </>
   )
-}
+})
 
 export default FortunePage;

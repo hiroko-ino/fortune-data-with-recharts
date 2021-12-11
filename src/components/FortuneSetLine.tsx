@@ -6,7 +6,7 @@ interface FortuneSetLineType {
   setLineSettings: React.Dispatch<React.SetStateAction<lineSettingsType>>
 }
 
-const FortuneSetLine: React.FC<FortuneSetLineType> = ({ lineSettings, setLineSettings }) => {
+const FortuneSetLine: React.FC<FortuneSetLineType> = React.memo(({ lineSettings, setLineSettings }) => {
   const handleSetLine = (lineKey: string, index: number) => {
     const temp = [...lineSettings];
     const selectLine = temp[index];
@@ -40,6 +40,6 @@ const FortuneSetLine: React.FC<FortuneSetLineType> = ({ lineSettings, setLineSet
       </ul>
     </div>
   )
-}
+})
 
 export default FortuneSetLine;
