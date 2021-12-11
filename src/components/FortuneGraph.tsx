@@ -13,7 +13,7 @@ interface FortuneGraphProps {
   formattedToday: string
 }
 
-const FortuneGraph: React.FC<FortuneGraphProps> = ({ data, lineSettings, formattedToday }) => {
+const FortuneGraph: React.FC<FortuneGraphProps> = React.memo(({ data, lineSettings, formattedToday }) => {
   const isPc = useMedia({ minWidth: '768px' });
 
   return (
@@ -46,6 +46,6 @@ const FortuneGraph: React.FC<FortuneGraphProps> = ({ data, lineSettings, formatt
       </ResponsiveContainer>
     </div>
   )
-}
+})
 
 export default FortuneGraph;

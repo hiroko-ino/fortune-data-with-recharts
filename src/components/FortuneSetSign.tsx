@@ -9,10 +9,10 @@ interface FortuneSetSignType {
   setSign: React.Dispatch<React.SetStateAction<string>>
 }
 
-const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
+const FortuneSetSign: React.FC<FortuneSetSignType> = React.memo(({ sign, setSign }) => {
   const signList: ReactNode[] = [];
   _forEach(signData, (signData, key) => {
-    signList.push(<li className="ml-4 mb-2"><button className={classNames('p-1', 'rounded', { 'text-white': key === sign, 'bg-pink-700': key === sign })} aria-label="星座を選択" onClick={() => handleSetsign(key)}>{signData.jpName}</button></li>)
+    signList.push(<li key={signData.jpName} className="ml-4 mb-2"><button className={classNames('p-1', 'rounded', { 'text-white': key === sign, 'bg-pink-700': key === sign })} aria-label="星座を選択" onClick={() => handleSetsign(key)}>{signData.jpName}</button></li>)
   })
 
   const handleSetsign = (sign: string) => {
@@ -27,6 +27,6 @@ const FortuneSetSign: React.FC<FortuneSetSignType> = ({ sign, setSign }) => {
       </ul>
     </div>
   )
-}
+})
 
 export default FortuneSetSign;

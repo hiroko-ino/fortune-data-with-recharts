@@ -6,7 +6,7 @@ interface FortuneControlType {
   setNow: React.Dispatch<React.SetStateAction<nowType>>
 }
 
-const FortuneControl: React.FC<FortuneControlType> = ({now, setNow, date}) => {
+const FortuneControl: React.FC<FortuneControlType> = React.memo(({now, setNow, date}) => {
   const handlePrev = () => {
     setNow((prevState) => ({
       year: now.month === 1 ? prevState.year - 1 : prevState.year,
@@ -23,10 +23,20 @@ const FortuneControl: React.FC<FortuneControlType> = ({now, setNow, date}) => {
 
   return (
     <div className="flex justify-between">
-      <button className="p-1 bg-gray-800 text-white rounded" onClick={handlePrev}>前月</button>
-      {!(now.year === date.getFullYear() && now.month === date.getMonth() + 1) && <button className="p-1 bg-gray-800 text-white rounded" onClick={handleNext}>次月 &gt;</button>}
+      <button
+        className="p-1 bg-gray-800 text-white rounded"
+        onClick={handlePrev}>
+        前月
+      </button>
+      {!(now.year === date.getFullYear() && now.month === date.getMonth() + 1) && (
+        <button
+          className="p-1 bg-gray-800 text-white rounded"
+          onClick={handleNext}>
+            次月 &gt;
+        </button>
+      )}
     </div>
   )
-}
+})
 
 export default FortuneControl;
