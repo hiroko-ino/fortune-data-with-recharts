@@ -2,11 +2,8 @@
 
 外部占いAPIを用いたRechartsのデモです。
 
-こちらで公開しています。
-
-<http://fortune-data-with-recharts.herokuapp.com/>
-
-!外部APIがhttpのためhttpで閲覧してください
+herokuで公開していたのですが無料がなくなったので取りやめました。
+httpでしか公開出来ない（APIがhttpのため）ので、しばらくは公開できなさそうです。
 
 APIのサイト <https://jugemkey.jp/api/waf/api_free.php>
 
